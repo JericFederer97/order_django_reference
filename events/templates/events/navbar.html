@@ -1,0 +1,15 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid d-flex justify-content-between">
+    <a class="navbar-brand" href="{% url 'home' %}">注文書 ー アイテム一覧画面テスト</a>
+    <div class="d-flex justify-content-between align-items-center">
+      <a class="btn btn-primary me-5" href="{% url 'venue_csv' %}">注文書CSVダウンロード</a>
+      <div class="navbar-text" id="navbarSupportedContent">
+        <form class="d-flex" method=POST action="{% url 'search-venues' %}">
+          {% csrf_token %}
+          <input class="form-control me-2" style="width: 260px" type="search" placeholder="アイテムコードか名を入力" aria-label="Search" name="searched">
+          <button class="btn btn-outline-secondary" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
